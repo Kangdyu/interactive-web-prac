@@ -1,0 +1,90 @@
+@import "../reset.css";
+
+body {
+  height: 500vw;
+  color: #555555;
+  background: #747d8c;
+}
+
+.world {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  perspective: 1000px;
+}
+
+.stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+
+.house {
+  width: 100vw;
+  height: 100vh;
+  transform: translateZ(-300vw);
+  transform-style: preserve-3d;
+}
+
+.wall {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  /* background: rgba(255, 255, 255, 0.3); */
+}
+
+.wall-left,
+.wall-right {
+  width: 3300vw;
+  background: #2f3542;
+}
+
+.wall-left {
+  transform: rotateY(90deg) translateZ(-1650vw) translateX(1050vw);
+}
+
+.wall-right {
+  transform: rotateY(90deg) translateZ(-1550vw) translateX(1050vw);
+}
+
+.wall-front:last-child .wall-content {
+  background: rgb(23, 0, 2);
+}
+
+.wall-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+}
+
+.wall-content img {
+  width: 1000px;
+}
+
+.wall-title {
+  font-size: 4rem;
+}
+
+.progress-bar-container {
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 5px;
+  background: #555555;
+}
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+  background: #00a8ff;
+}
