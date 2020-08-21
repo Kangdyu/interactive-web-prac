@@ -4,15 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
-    <div class="mario"></div>
-    <div class="world">
-      <div class="card">
-        <div class="card-side card-side-front">F</div>
-        <div class="card-side card-side-back">B</div>
+    <div class="stage">
+      <div class="door">
+        <div class="door-back">
+          <a href="pages/card.html" class="symbol"></a>
+        </div>
+        <div class="door-body"></div>
+      </div>
+      <div class="door">
+        <div class="door-back">
+          <a href="#" class="symbol"></a>
+        </div>
+        <div class="door-body"></div>
+      </div>
+      <div class="door">
+        <div class="door-back">
+          <a href="#" class="symbol"></a>
+        </div>
+        <div class="door-body"></div>
       </div>
     </div>
+    <script>
+      (function () {
+        const stageElement = document.querySelector(".stage");
+        let openedDoor;
+
+        function handleDoor(event) {
+          const target = event.target;
+
+          if (openedDoor) {
+            openedDoor.classList.remove("door-opened");
+          }
+
+          if (target.classList.contains("door-body")) {
+            openedDoor = target.parentNode;
+            openedDoor.classList.toggle("door-opened");
+          }
+        }
+
+        stageElement.addEventListener("click", handleDoor);
+      })();
+    </script>
   </body>
 </html>

@@ -1,0 +1,80 @@
+@import "reset.css";
+
+.stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(241, 242, 246, 1);
+}
+
+.door {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  cursor: pointer;
+}
+
+.door-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+}
+
+.symbol {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 100%;
+  transform: translate3D(0, 100%, 0);
+  transition: 0.5s;
+  transition-delay: 0.3s;
+}
+
+.door:nth-child(1) .symbol {
+  background-image: url("../images/aing1.png");
+}
+
+.door:nth-child(2) .symbol {
+  background-image: url("../images/aing2.png");
+}
+
+.door:nth-child(3) .symbol {
+  background-image: url("../images/aing3.png");
+}
+
+.door-body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  transform-origin: left;
+  transition: 0.5s;
+}
+
+.door:nth-child(1) .door-body {
+  background: rgba(255, 71, 87, 0.8);
+}
+
+.door:nth-child(2) .door-body {
+  background: rgba(46, 213, 115, 0.8);
+}
+
+.door:nth-child(3) .door-body {
+  background: rgba(30, 144, 255, 0.8);
+}
+
+.door-opened .door-body {
+  transform: perspective(800px) rotateY(-110deg);
+}
+
+.door-opened .symbol {
+  transform: translate3d(0, 0, 0);
+}

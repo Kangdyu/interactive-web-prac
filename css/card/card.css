@@ -1,4 +1,4 @@
-@import "reset.css";
+@import "../reset.css";
 
 @keyframes mario-ani {
   to {
@@ -9,7 +9,7 @@
 .mario {
   width: 32px;
   height: 40px;
-  background: url("../images/mario-sprites.png") no-repeat 0 -432px;
+  background: url("../../images/mario-sprites.png") no-repeat 0 -432px;
   animation: mario-ani 0.5s infinite steps(10);
 }
 
