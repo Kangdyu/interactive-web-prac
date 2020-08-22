@@ -3,7 +3,14 @@
 body {
   height: 500vw;
   color: #555555;
-  background: #747d8c;
+}
+
+.background {
+  position: fixed;
+  background-image: url("https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80");
+  width: 100vw;
+  height: 100vh;
+  filter: blur(10px) brightness(4);
 }
 
 .world {
@@ -37,13 +44,13 @@ body {
   top: 0;
   width: 100vw;
   height: 100vh;
-  /* background: rgba(255, 255, 255, 0.3); */
 }
 
 .wall-left,
 .wall-right {
   width: 3300vw;
   background: #2f3542;
+  transition: background 1s;
 }
 
 .wall-left {
@@ -81,12 +88,13 @@ body {
   left: 0;
   top: 0;
   width: 100vw;
-  height: 5px;
-  background: #555555;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .progress-bar {
   width: 0;
   height: 100%;
   background: #00a8ff;
+  transition: background 1s;
 }
