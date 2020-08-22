@@ -1,3 +1,5 @@
+import { Character } from "./character.js";
+
 const stageElement = document.querySelector(".stage");
 const houseElement = document.querySelector(".house");
 const barElement = document.querySelector(".progress-bar");
@@ -129,6 +131,13 @@ window.addEventListener("mousemove", function (event) {
 });
 
 window.addEventListener("resize", resizeHandler);
+
+stageElement.addEventListener("click", function (event) {
+  const xPos = (event.clientX / window.innerWidth) * 100;
+  new Character({
+    xPos,
+  });
+});
 
 setFrontWalls();
 resizeHandler();

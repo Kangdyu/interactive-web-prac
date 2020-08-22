@@ -1,4 +1,5 @@
 @import "../reset.css";
+@import "character.css";
 
 body {
   height: 500vw;
